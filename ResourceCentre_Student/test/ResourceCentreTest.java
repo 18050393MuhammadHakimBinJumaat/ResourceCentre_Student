@@ -109,14 +109,14 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public boolean doLoanCamcorderTest(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
+	public void doLoanCamcorderTest(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
 		//fail("Not yet implemented");
 		// write your code here
 		//ChengHan
 		//Test
 		
-		/*
-		boolean isLoaned = false;
+		
+		/*boolean isLoaned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
 			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
@@ -144,10 +144,18 @@ public class ResourceCentreTest {
 		
 	
 	
-	@Test
-	public void doLoanChromebookTest() {
+public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
+		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
 		
+		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		boolean cd1 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-2020");
+		assertEquals(true, cd1);
+				
+		boolean cd2 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
+		assertEquals(false, cd2);
 		
+
 	}
 		//fail("Not yet implemented");
 		// write your code here
