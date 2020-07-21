@@ -97,6 +97,7 @@ public class ResourceCentreTest {
 	public boolean doLoanCamcorderTest(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
 		//fail("Not yet implemented");
 		// write your code here
+		//ChengHan
 		boolean isLoaned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
