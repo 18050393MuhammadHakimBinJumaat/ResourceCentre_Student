@@ -89,6 +89,7 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		// ChengHan 
+		// Test
 
 		boolean isLoaned = false;
 
