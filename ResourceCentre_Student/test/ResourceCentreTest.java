@@ -160,6 +160,7 @@ public class ResourceCentreTest {
 	
 	
 public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
+	// Cheng Han
 		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
 		
 		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
