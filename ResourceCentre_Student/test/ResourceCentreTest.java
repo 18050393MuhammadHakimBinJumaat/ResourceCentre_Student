@@ -83,7 +83,7 @@ public class ResourceCentreTest {
 	public void retrieveAllChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		//Hakim
+		//Hakim hi
 		
 		/*for(int i=0; i<chromebookList.size(); i++) {
 			if (chromebookList !=null){
