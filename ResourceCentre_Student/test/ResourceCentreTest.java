@@ -116,11 +116,28 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", chromeboo
 	}
 
 	@Test
-	public void doLoanCamcorderTest() {
+	public boolean doLoanCamcorderTest(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
 		//fail("Not yet implemented");
 		// write your code here
+		//ChengHan
+		//Yest
+		boolean isLoaned = false;
+
+		for (int i = 0; i < camcorderList.size(); i++) {
+			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
+					&& camcorderList.get(i).getIsAvailable() == true) {
+				
+				camcorderList.get(i).setIsAvailable(false);
+				camcorderList.get(i).setDueDate(dueDate);
+				
+				isLoaned = true;
+			}
+			}
+			return isLoaned;
+		}
+	
 		
-	}
+	
 	
 	@Test
 	public void doLoanChromebookTest() {
