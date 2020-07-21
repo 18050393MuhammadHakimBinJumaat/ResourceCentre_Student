@@ -90,6 +90,7 @@ public class ResourceCentreTest {
 		// write your code here
 		// ChengHan 
 		// Test
+		//Test1
 
 		boolean isLoaned = false;
 
