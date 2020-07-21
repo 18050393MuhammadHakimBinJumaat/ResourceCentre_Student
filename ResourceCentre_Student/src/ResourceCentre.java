@@ -146,10 +146,6 @@ public class ResourceCentre {
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
-		for(int i=0; i<chromebookList.size(); i++) {
-			if (chromebookList !=null){
-				System.out.println(chromebookList);
-			}
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
@@ -225,7 +221,7 @@ public class ResourceCentre {
 	}
 	
 	//================================= Option 4 Return =================================
-	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
+	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag, String string, int j) {
 		boolean isReturned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
@@ -240,7 +236,7 @@ public class ResourceCentre {
 		return isReturned;
 		
 	}
-	public static void returnCamcorder(ArrayList<Camcorder> camcorderList) {
+	public static void returnCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc1) {
 		ResourceCentre.viewAllCamcorder(camcorderList);
 		String tag = Helper.readString("Enter asset tag > ");
 		Boolean isReturned = doReturnCamcorder(camcorderList, tag);
@@ -262,5 +258,5 @@ public class ResourceCentre {
 		// write your code here
 	}
 
+	
 
-}
