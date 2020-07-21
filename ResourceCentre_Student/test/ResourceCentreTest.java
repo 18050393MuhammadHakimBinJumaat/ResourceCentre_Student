@@ -69,8 +69,9 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
 		
-		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
+		//test if the expected output string same as the list of cambooks retrieved from the SourceCentre
 		allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
+		
 
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
@@ -83,12 +84,33 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//Hakim
-		for(int i=0; i<chromebookList.size(); i++) {
+		
+		/*for(int i=0; i<chromebookList.size(); i++) {
 			if (chromebookList !=null){
 				System.out.println(chromebookList);
 			}
-		}
-			
+		}*/
+assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+        
+        //test if the list of chromebook retrieved from the SourceCentre is empty
+                String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+                String testOutput = "";
+                assertEquals("Check that ViewAllChromebookList", testOutput, allChromebook);
+                
+        //Given an empty list, after adding 2 items, test if the size of the list is 2
+        ResourceCentre.addChromebook(chromebookList, cb1);
+        ResourceCentre.addChromebook(chromebookList, cb2);
+        assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+        
+        //test if the expected output string same as the list of chromebook retrieved from the SourceCentre
+        allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+        
+ 
+
+        testOutput = String.format("%-10s %-30s %-10s\n","CB0011", "My Google Chromebook 1st", "Mac OS");
+        testOutput += String.format("%-10s %-30s %-10s\n","CB0012", "SAMSUNG Chromebook 4+", "Win 10");
+    
+        assertEquals("Check that ViewAllChrombookList", testOutput, allChromebook);
 		
 		
 	}
