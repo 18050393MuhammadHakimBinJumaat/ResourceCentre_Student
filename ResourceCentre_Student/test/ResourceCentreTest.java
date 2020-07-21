@@ -120,7 +120,7 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", chromeboo
 		//fail("Not yet implemented");
 		// write your code here
 		//ChengHan
-		//Yest
+		//Test
 		boolean isLoaned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
