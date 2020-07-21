@@ -98,6 +98,7 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//ChengHan
+		//Yest
 		boolean isLoaned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
