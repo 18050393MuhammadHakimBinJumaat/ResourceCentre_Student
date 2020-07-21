@@ -161,6 +161,7 @@ public class ResourceCentreTest {
 	
 public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 	// Cheng Han
+	
 		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
 		
 		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
@@ -171,22 +172,51 @@ public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, Str
 		boolean cd2 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
 		assertEquals(false, cd2);
 		
-
 	}
+	
 		//fail("Not yet implemented");
 		// write your code here
-	}
+	
 	
 	@Test
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//boundary
+		assertNotNull("Check if there is valid camcorder in the arrayList", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		//error
+		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011"); 
+		assertFalse("Check that available camcorder CC0011 is returned -false?", isReturned);
+		//normal
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		assertTrue("Check that loanded out camcorder CC0012 is returned -true",isReturned);
+		//error
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+		assertFalse("Check that non-existing camcorder CC0013 is returned - false?", isReturned);
 		
 	}
 	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//Hakim
+		//boundary
+		assertNotNull("Check if there is valid chromebook in the arrayList", chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		//error
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011"); 
+		assertFalse("Check that available chromebook CB0011 is returned -false?", isReturned);
+		//normal
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Check that loanded out chromebook CB0012 is returned -true",isReturned);
+		//error
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertFalse("Check that non-existing chromebook CB0013 is returned - false?", isReturned);
 	}
 	
 	@After
