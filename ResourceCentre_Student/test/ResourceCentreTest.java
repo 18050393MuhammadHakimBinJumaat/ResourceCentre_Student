@@ -52,6 +52,8 @@ public class ResourceCentreTest {
 	}
 	@Test
 	public void addChromebookTest() {
+		//s
+	}
 		//fail("Not yet implemented");
 		// write your code here
 	}
