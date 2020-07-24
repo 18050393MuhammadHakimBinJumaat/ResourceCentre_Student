@@ -146,6 +146,16 @@ public class ResourceCentre {
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
+
+		//Hakim
+		for (int i = 0; i < chromebookList.size(); i++) {
+
+			output += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(i).getAssetTag(),
+					chromebookList.get(i).getDescription(), 
+					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
+					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
+			}
+
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
@@ -178,6 +188,9 @@ public class ResourceCentre {
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		//Hakim
+		chromebookList.add(cb);
+		System.out.println("Chromebook added");
 	}
 	
 	//================================= Option 3 Loan =================================
@@ -221,7 +234,7 @@ public class ResourceCentre {
 	}
 	
 	//================================= Option 4 Return =================================
-	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag, String string, int j) {
+	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag, String string) {
 		boolean isReturned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
@@ -239,7 +252,8 @@ public class ResourceCentre {
 	public static void returnCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc1) {
 		ResourceCentre.viewAllCamcorder(camcorderList);
 		String tag = Helper.readString("Enter asset tag > ");
-		Boolean isReturned = doReturnCamcorder(camcorderList, tag);
+		String dueDate = Helper.readString("Enter due date >");
+		Boolean isReturned = doReturnCamcorder(camcorderList, tag, dueDate);
 		
 		if (isReturned == false) {
 			System.out.println("Invalid asset tag");
@@ -256,7 +270,7 @@ public class ResourceCentre {
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		// write your code here
-	}
+	}}
 
 	
 
