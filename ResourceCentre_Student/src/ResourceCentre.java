@@ -184,8 +184,10 @@ public class ResourceCentre {
 		Chromebook cb =null;
 		// write your code here
 		return cb;
+		//salma
 		
 	}	
+	//salma
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
 		//Hakim
