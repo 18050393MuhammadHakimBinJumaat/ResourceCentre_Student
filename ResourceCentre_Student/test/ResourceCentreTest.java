@@ -14,6 +14,7 @@ public class ResourceCentreTest {
 	
 	private ArrayList<Camcorder> camcorderList;
 	private ArrayList<Chromebook> chromebookList;
+	private Object ;
 	
 	public ResourceCentreTest() {
 		super();
@@ -53,21 +54,6 @@ public class ResourceCentreTest {
 	public void addChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		//Hakim WE CAN DO IT
-		// Item list is not null, so that can add a new item
-				assertNotNull("Test if there is valid Chrombook arraylist to add to", chromebookList);
-				
-				//Given an empty list, after adding 1 item, the size of the list is 1
-				ResourceCentre.addChromebook(chromebookList, cb1);		
-				assertEquals("Test if that Chrombook arraylist size is 1?", 1, chromebookList.size());
-				
-				//The item just added is as same as the first item of the list
-				assertSame("Test that Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
-				
-				//Add another item. test The size of the list is 2?
-				ResourceCentre.addChromebook(chromebookList, cb2);
-				assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
-		
 	}
 	
 	@Test
@@ -167,13 +153,24 @@ public class ResourceCentreTest {
 	}
 		//fail("Not yet implemented");
 		// write your code here
-	}
+	
 	
 	@Test
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//salma
 		
+	assertNotNull("Test if the camcorder test can be returned", camcorderList);
+	ResourceCentre.addCamcorder(camcorderList,cc1);
+	Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList,"CC011", null, 0);
+	assertFalse(" Test if available camcorder CC0012 is returned -false?",isReturned);
+	ResourceCentre.addCamcorder(camcorderList,cc2);
+	cc2.setIsAvailable(false);
+	isReturned = ResourceCentre.doReturnCamcorder(camcorderList,"CC012", null, 0);
+	assertTrue("Test if loaned out camcorder cc012 is returned - true?", isReturned);
+	isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC013", null, 0);
+	assertFalse("Test if non-existing camcorder CC013 is returned -false?", isReturned);
 	}
 	@Test
 	public void doReturnChromebookTest() {
